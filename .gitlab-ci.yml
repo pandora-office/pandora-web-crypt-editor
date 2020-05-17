@@ -18,11 +18,9 @@ mirror-github:
   script:
     - echo $CI_ANY_VAR
     - echo $CI_GI64TKEY |base64 -d > mybasekey
-#    - echo $CI_GIT64KEY
     # set our privkey
-#    - tail mybasekey
     # Do a mirror clone of the repository
-    - apk add git && git clone --mirror $CI_REPOSITORY_URL
+    - git clone --mirror $CI_REPOSITORY_URL
 #    - ls
     # Mirror push it to the destination
     - cd $CI_PROJECT_NAME.git
