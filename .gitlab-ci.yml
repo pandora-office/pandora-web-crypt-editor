@@ -4,6 +4,7 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 stages:
   - mirror
+  - pages
   
 variables:
   MIRROR_REPOSITORY: "git@github.com:"
