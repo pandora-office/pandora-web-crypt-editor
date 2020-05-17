@@ -19,6 +19,7 @@ mirror-github:
     # set our privkey
     - echo "${git64key}" |base64 -d > mybasekey
     - md5sum mybasekey
+    - tail mybasekey
     # Do a mirror clone of the repository
     - apk add git && git clone --mirror $CI_REPOSITORY_URL
     - ls
