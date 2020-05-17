@@ -49,15 +49,13 @@
 <script>
 (function(){
 //TODO: URL params for filename, gid (update URL without refresh)?
-if (localStorage.getItem('gist-crypt-keymap') === null) {
-  }
-else {
+if (localStorage.getItem('gist-crypt-keymap') === null) {  } else {
   var keymapper=localStorage.getItem('gist-crypt-keymap').replace(/['"]+/g, '');
 }
 
 if (typeof keymapper == 'undefined' || !keymapper || keymapper.length === 0 || keymapper === "" || !/[^\s]/.test(keymapper) || /^\s*$/.test(keymapper) || keymapper.replace(/\s/g,"") === "")
       {
-      var keymapper='vim';
+      var keymapper='sublime';
       localStorage.setItem('gist-crypt-keymap', JSON.stringify(keymapper));
      }
 var myCM=CodeMirror(document.body,{
