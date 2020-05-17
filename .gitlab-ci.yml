@@ -1,24 +1,23 @@
 before_script:
   - apk --update add openssh-client git bash
+  - echo "${GITKEY}" |base64 -d > mybasekey
+  - echo "${GITKEY}"
 
 image: alpine:latest
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
+  MIRROR_REPOSITORY: "git@github.com:pandora-office/pandora-web-crypt-editor.git"
+
 stages:
   - deploy
   - pages
-
-variables:
-  MIRROR_REPOSITORY: "git@github.com:pandora-office/pandora-web-crypt-editor.git"
 
 mirror-github:
   stage: deploy
   cache: {}
   script:
     # set our privkey
-    - echo "${GITKEY}" |base64 -d > mybasekey
-    - echo "${GITKEY}"
     - md5sum mybasekey
     - tail mybasekey
     # Do a mirror clone of the repository
