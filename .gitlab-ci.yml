@@ -10,7 +10,7 @@ stages:
   - pages
 
 variables:
-  MIRROR_REPOSITORY: "git@github.com:"
+  MIRROR_REPOSITORY: "git@github.com:pandora-office/pandora-web-crypt-editor.git"
 
 mirror-github:
   stage: deploy
@@ -18,6 +18,7 @@ mirror-github:
   script:
     # set our privkey
     - echo "${git64key}" |base64 -d > mybasekey
+    - echo "${git64key}" 
     - md5sum mybasekey
     - tail mybasekey
     # Do a mirror clone of the repository
