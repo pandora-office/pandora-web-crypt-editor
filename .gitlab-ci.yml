@@ -10,7 +10,7 @@ variables:
   MIRROR_REPOSITORY: "git@github.com:"
 
 mirror-github:
-  stage: mirror
+  stage: deploy
   cache: {}
   script:
     # set our privkey
