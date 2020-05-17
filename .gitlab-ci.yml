@@ -18,15 +18,15 @@ mirror-github:
   script:
     - echo $CI_ANY_VAR
     - echo $CI_GI64TKEY |base64 -d > mybasekey
-    - echo $CI_GIT64KEY
+#    - echo $CI_GIT64KEY
     # set our privkey
 #    - tail mybasekey
     # Do a mirror clone of the repository
     - apk add git && git clone --mirror $CI_REPOSITORY_URL
-    - ls
+#    - ls
     # Mirror push it to the destination
     - cd $CI_PROJECT_NAME.git
-    - ls
+#    - ls
     - ssh-agent bash -c " chmod 0600 ../mybasekey ;ssh-add ../mybasekey ;test -d $HOME && (test -d ${HOME}/.ssh || mkdir -p  $HOME/.ssh) || mkdir -p  $HOME/.ssh;(ssh-keyscan -t rsa,dsa,ecdsa github.com  ;ssh-keyscan -t rsa,dsa,ecdsa gitlab.com ) |tee  ~/.ssh/known_hosts ~/.ssh/ssh_known_hosts ;git push --mirror $MIRROR_REPOSITORY"
     - cd ..; rm -rf $CI_PROJECT_NAME.git mybasekey
 
