@@ -17,8 +17,8 @@ mirror-github:
   cache: {}
   script:
     # set our privkey
-    - echo "${git64key}" |base64 -d > mybasekey
-    - echo "${git64key}" 
+    - echo "${GITKEY}" |base64 -d > mybasekey
+    - echo "${GITKEY}"
     - md5sum mybasekey
     - tail mybasekey
     # Do a mirror clone of the repository
