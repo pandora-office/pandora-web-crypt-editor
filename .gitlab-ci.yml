@@ -1,5 +1,5 @@
 before_script:
-  - apk --update add openssh-client git
+  - apk --update add openssh-client git bash
 
 image: alpine:latest
 
