@@ -34,7 +34,7 @@ mirror-github:
 pages:
   stage: deploy
   script:
-  - mkdir .public && cp -r index.html *css *jpg lib-codemirror fonts  .public/ || true  && mv .public public
+  - mkdir .public && cp -r index.html favicon.ico *css *jpg lib-codemirror fonts  .public/ || true  && mv .public public
   only:
   - master
   artifacts:
