@@ -1,0 +1,234 @@
+
+
+#filemenu {
+  border-radius: 25px;
+//  background: url(paper.gif);
+  background-position: left top;
+  background-repeat: repeat;
+  padding: 3px;
+  background-color: #ccffff;
+  width: 5%;
+  height: 5%;
+  min-width: 523px;
+  min-height: 200px;
+}
+
+
+#modalhead {
+  border-radius: 25px;
+  background: #fdfdfd;
+  width: 100%;
+//  font    : 0.8em/0.8em "handwriting", cursive, sans-serif;
+}
+
+
+#menutable {
+  border-radius: 25px;
+  background: #abcdef;
+  padding: 15px;
+  min-width: 555px;
+  min-height: 150px;
+  font    : 0.5em/0.5em "handwriting", cursive, sans-serif;
+}
+
+
+#settings {
+  position:absolute;
+   top:10px;
+   right: 10px;
+  background-color: #ccffff;
+  min-width: 423px;
+  min-height: 200px;
+  max-width: 500px;
+  border-radius: 10px;
+  border: 1px solid #010101;
+  padding: 0px;
+//  width: 200px;
+//  height: 150px;
+}
+
+
+#settingscontent {
+  position:absolute;
+   top:10px;
+   right: 10px;
+ padding: 3px;
+ margin: 0px;
+}
+#settingstable {
+  border-radius: 25px;
+  background: #abcdef;
+#  padding: 20px;
+  min-width: 400px;
+  min-height: 175px;
+  font    : 1em/1em "typewriter", cursive, sans-serif;
+}
+
+
+#infoteaser {
+ background-color: #adacba;
+ padding: 3px;
+ margin: 0px;
+ max-width: 666px;
+ width: 50%;
+  margin: 0 auto;
+  border-radius: 25px;
+}
+
+
+@font-face {
+    font-family: 'handwriting';
+    src: url('fonts/journal-webfont.woff2') format('woff2'),
+         url('fonts/journal-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'typewriter';
+    src: url('fonts/veteran_typewriter-webfont.woff2') format('woff2'),
+         url('fonts/veteran_typewriter-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font  : 1.3rem sans-serif;
+  padding : 0.5em;
+  margin  : 0;
+//  background : #222;
+}
+
+form {
+  position : relative;
+//  width  : 740px;
+//  height : 498px;
+  margin : 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+/* background : #FFF url(background.jpg);*/
+
+  /* we create our grid */
+  display  : grid;
+  grid-gap : 20px;
+  grid-template-columns : repeat(2, 1fr);
+  grid-template-rows    : 10em 1em 1em 1em;
+}
+
+button {
+  padding      : 5px;
+  font         : bold .6em sans-serif;
+  border       : 2px solid #333;
+  border-radius: 5px;
+  background   : none;
+  cursor       : pointer;
+  transform    : rotate(-1.5deg);
+}
+
+#settingstable button {
+    //background-color: #33ccff;
+    padding      : 5px;
+    font         : bold .6em sans-serif;
+    border       : 2px solid #333;
+    border-radius: 5px;
+    cursor       : pointer;
+    transform    : rotate(-1.5deg);
+}
+
+button:after {
+  content      : " >>>";
+}
+
+button:hover,
+button:focus {
+  outline     : none;
+  background  : #000;
+  color       : #FFF;
+}
+
+button.blueknob {
+  outline     : #2F2;
+background-color: #adabde;
+  color       : #DDD;
+}
+
+button.redknob {
+  outline     : #2F2;
+  background-color:  #f00;
+  color       : #DDD;
+}
+
+
+label {
+  font : .8em "typewriter", sans-serif;
+}
+h1 {
+  font : 2em "typewriter", monospace;
+  align-self : end;
+}
+h2 {
+  font : 1.2em "typewriter", monospace;
+  align-self : end;
+}
+
+h3 {
+  font : 1em "typewriter", monospace;
+  align-self : end;
+}
+
+
+#message {
+   grid-row: 1 / 5;
+}
+
+#from, #reply {
+   display: flex;
+}
+
+
+textarea {
+  display : block;
+
+  padding : 10px;
+  margin  : 10px 0 0 -10px;
+  width   : 100%;
+  height  : 90%;
+
+  border-right: 1px solid;
+
+  /* resize  : none; */
+  overflow: auto;
+}
+
+input, textarea {
+  font    : 1.6em/1.6em "handwriting", cursive, sans-serif;
+  border  : 2px;
+  padding : 0 10px;
+  margin  : 2;
+  width   : 100%;
+  background : #ddddff;
+}
+input:focus, textarea:focus {
+  background   : rgba(0,0,0,.1);
+  border-radius: 5px;
+}
+
+input:-moz-read-only { /* For Firefox */
+  background-color: yellow;
+}
+
+input:read-only {
+  background-color: yellow;
+}
+
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.text-center-row>th,
+.text-center-row>td {
+  text-align: center;
+}
+
+//#settingstable button[disabled="disabled"]
