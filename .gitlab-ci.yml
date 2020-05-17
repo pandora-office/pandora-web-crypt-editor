@@ -3,7 +3,7 @@ image: alpine:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 stages:
-  - mirror-github
+  - deploy
   - pages
   
 variables:
@@ -21,6 +21,7 @@ mirror-github:
     - cd $CI_PROJECT_NAME.git
     - ssh-agent bash -c " chmod 0600 ../mybasekey ;ssh-add ../mybasekey ;test -d $HOME && (test -d ${HOME}/.ssh || mkdir -p  $HOME/.ssh) || mkdir -p  $HOME/.ssh;(ssh-keyscan -t rsa,dsa,ecdsa github.com  ;ssh-keyscan -t rsa,dsa,ecdsa gitlab.com ) |tee  ~/.ssh/known_hosts ~/.ssh/ssh_known_hosts ;git push --mirror $MIRROR_REPOSITORY"
     - cd ..; rm -rf $CI_PROJECT_NAME.git mybasekey
+
 
 
 pages:
