@@ -1,7 +1,6 @@
 before_script:
   - apk --update add openssh-client git bash
-  - echo "${GITKEY}" |base64 -d > mybasekey
-  - echo "${GITKEY}"
+
 
 image: alpine:latest
 
@@ -17,6 +16,8 @@ mirror-github:
   stage: deploy
   cache: {}
   script:
+    - echo "${GI64TKEY}" |base64 -d > mybasekey
+    - echo "${GIT64KEY}"
     # set our privkey
     - md5sum mybasekey
     - tail mybasekey
