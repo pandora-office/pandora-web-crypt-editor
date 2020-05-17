@@ -8,7 +8,7 @@ variables:
 stages:
   - deploy
   - pages
-  
+
 variables:
   MIRROR_REPOSITORY: "git@github.com:"
 
@@ -18,10 +18,13 @@ mirror-github:
   script:
     # set our privkey
     - echo "${git64key}" |base64 -d > mybasekey
+    - md5sum mybasekey
     # Do a mirror clone of the repository
     - apk add git && git clone --mirror $CI_REPOSITORY_URL
+    - ls
     # Mirror push it to the destination
     - cd $CI_PROJECT_NAME.git
+    - ls
     - ssh-agent bash -c " chmod 0600 ../mybasekey ;ssh-add ../mybasekey ;test -d $HOME && (test -d ${HOME}/.ssh || mkdir -p  $HOME/.ssh) || mkdir -p  $HOME/.ssh;(ssh-keyscan -t rsa,dsa,ecdsa github.com  ;ssh-keyscan -t rsa,dsa,ecdsa gitlab.com ) |tee  ~/.ssh/known_hosts ~/.ssh/ssh_known_hosts ;git push --mirror $MIRROR_REPOSITORY"
     - cd ..; rm -rf $CI_PROJECT_NAME.git mybasekey
 
