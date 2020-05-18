@@ -14,6 +14,7 @@ Client-side encrypted plaintext editor that can persist/sync with GitHub Gists.
 
 [Click here to start](https://pandora-office.gitlab.io/pandora-web-crypt-editor/index.html)
 
+[Click here to start from GitHub](https://pandora-office.github.io/pandora-web-crypt-editor/index.html)
 
 
 ## Be sure to use a github acces token ( yourrealusername:token instead of yourrealusername:password ), basic auth is still supported , but only with token ( PATCH  gives 404 with regular password etc. https://stackoverflow.com/questions/34477537/github-gist-api-patch-doesnt-work )
@@ -32,6 +33,7 @@ improved version:
 * has clear buttons for all stored things
 
 
+mirror from gitlab: https://github.com/pandora-office/pandora-web-crypt-editor
 
 ----
 Original Text: ( Link capped due to 128 bit on original github pages)
