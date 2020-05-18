@@ -5,17 +5,18 @@ Online Web Editor for Github Gist and Gitlab snippets with builtin encryption
 
 Client-side encrypted plaintext editor that can persist/sync with GitHub Gists.
 
+[Click here to start](https://pandora-office.gitlab.io/pandora-web-crypt-editor/index.html)
+
+[Click here to start from GitHub](https://pandora-office.github.io/pandora-web-crypt-editor/index.html)
+
+
+
 * Forked and modified from https://github/srpeck/encryptedgist and https://ithub/b1nch0/encryptedgist
 * using API via https and javascript with codemirror and sjcl
 * currently 256 bit aes
 * sublime shortkeys as default
 * stores gist id and token in browser localstorate , see settings knobs
 * Standalone JS and HTML5
-
-[Click here to start](https://pandora-office.gitlab.io/pandora-web-crypt-editor/index.html)
-
-[Click here to start from GitHub](https://pandora-office.github.io/pandora-web-crypt-editor/index.html)
-
 
 ## Be sure to use a github acces token ( yourrealusername:token instead of yourrealusername:password ), basic auth is still supported , but only with token ( PATCH  gives 404 with regular password etc. https://stackoverflow.com/questions/34477537/github-gist-api-patch-doesnt-work )
 
